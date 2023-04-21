@@ -19,14 +19,9 @@ inputs.question(
     const nascimento = dayjs(pergunta);
     if (!nascimento.isValid() || nascimento.isAfter(atual)) {
       console.log("Data inválida! Tente novamente.");
-
-      console.log(nascimento);
-
       inputs.close();
       return;
     }
-
-    console.log(nascimento, atual);
 
     const diferencaEmAnos = atual.diff(nascimento, "year");
     const proximoAniversario = nascimento.add(diferencaEmAnos + 1, "year");
